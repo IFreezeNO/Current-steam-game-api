@@ -6,4 +6,4 @@ You can search up steam users by their steamid and see what games they currently
 
 Nightbot command: 
 
-`$(eval const api = $(urlfetch json http://localhost:5000/steamid/$(querystring)); if (api.error) {'Error';} else { api['steamname']+ ' is `currently playing: ' + api['currentgame']})
+`$(eval const api = $(urlfetch json http://localhost:5000/steamid/$(querystring)); if (api.error) {'Error';} else { api['steamname']+ ' is currently playing: ' + api['currentgame']})
