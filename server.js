@@ -60,4 +60,10 @@ app.get('/steamid/:SteamID', function(req, res) {
 
     });
 });
+
+app.get('/', function(req, res) {       
+     res.send("Welcome to this site. You can lookup steam users by doing <code>/steamid/IFreezeNO</code>");
+
+});
+
 app.listen(process.env.PORT || 5000);
