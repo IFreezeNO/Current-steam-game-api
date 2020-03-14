@@ -1,7 +1,7 @@
 # Steam web api
 
 You can search up steam users by their steamid and see what games they currently play.
-
+![ScreenShot](https://i.imgur.com/WstFmXE.png)
 ![ScreenShot](https://i.imgur.com/xPlT9nl.png)
 
 ![ScreenShot](https://i.imgur.com/hfnpRAQ.png)
