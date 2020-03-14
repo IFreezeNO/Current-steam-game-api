@@ -3,20 +3,31 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie-edge">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <title>Search for steam users</title>
-        <script>function submit(){var e=document.getElementById("steamid").value;console.log(e),window.location.href=`/steamid/${e}`}</script>
+        <style>a{color:inherit}a:hover{color:inherit;}body{font-family:Source Sans Pro;background:#282828;background:linear-gradient(-45deg,#ee775e,#e73c7e,#23a6d5,#23d5ab);background-size:400% 400%;animation:Gradient 15s ease infinite}h1{font-weight:lighter;font-size:80px;color:#fff;text-align:center;padding-top:50px;margin-bottom:0}.main{margin:auto}p{font-family:Source Sans Pro;text-align:center;font-size:20px;color:#fff;margin-top:0}ul{display:-webkit-inline-box;margin:auto}li{list-style:none;padding:0;margin:auto;margin:20px;font-size:50px;color:#fff}li:hover{color:#292929;transition:.5s}@keyframes Gradient{0%{background-position:0 50%}50%{background-position:100% 50%}100%{background-position:0 50%}}@media only screen and (device-width:768px){.media{display:none}}@media only screen and (max-width:600px){.media{display:none}}@media only screen and (min-device-width:481px) and (max-device-width:1024px) and (orientation:portrait){.media{display:none}}@media only screen and (min-device-width:481px) and (max-device-width:1024px) and (orientation:landscape){.media{display:none}}</style>
+        <script>function submit(){if(""==document.getElementById("steamid").value)alert("You need to write something before you proceed!");else{var e=document.getElementById("steamid").value;console.log(e),window.location.href=`/steamid/${e}`}}function start(){document.getElementById("steamid").addEventListener("keydown",function(e){if(!e)e=window.event;13==e.keyCode&&submit()})}</script>
     </head>
-    <body>
+    <body onload="start()">
         <main class="container">
         <h1>Search for Steam users</h1> 
         <p>You can search with steam64 or username</p>
             <section class="my-4 form-inline">
-                <label for="steamid" class="sr-only">Steam64 id</label>
-                <input type="text" placeholder="IFreezeNO"  id="steamid" class="form-control col mr-2" required>
-                <button class="btn btn-success" onclick="submit()" type="submit">Search</button>
+                    <input type="text" placeholder="IFreezeNO"  id="steamid" class="form-control col mr-2" required>
+                    <button id="submitbutton" class="btn btn-success" onclick="submit()">Search</button>
+            </section>
+            <section class="media">
+                <ul>
+                <li><a href="https://steamcommunity.com/id/IFreezeNO/" target="_blank"><i class="fa fa-steam"></i></a></li>
+                <li><a href="https://twitter.com/IFreezeNO" target="_blank"><i class="fa fa-twitter"></i></a></li>
+                <li><a href="https://twitch.tv/IFreezeNO" target="_blank"><i class="fa fa-twitch"></i></a></li>
+                <li><a href="https://github.com/IFreezeNO/" target="_blank"><i class="fa fa-github"></i></a></li>
+                <li><a href="https://steamcommunity.com/tradeoffer/new/?partner=242770205&token=2078YPrp" target="_blank"><i class="fa fa-gratipay"></i></a></li>
+                </ul>
             </section>
         </main>
+
     </body>
 </html>
