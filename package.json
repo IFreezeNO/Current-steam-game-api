@@ -2,7 +2,7 @@
   "name": "current-steam-game",
   "version": "1.0.0",
   "description": "Check what game a steam user is playing by having his steam64id",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "serve": "nodemon server.js"
   },
