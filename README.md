@@ -5,10 +5,10 @@ You can search up steam users by their steamid and see what games they currently
 
 Nightbot command: 
 
-`$(eval const api = $(urlfetch json https://steam-game-checker.herokuapp.com/steamid/<streamername>); if (api.error) {'Error';} else { api['steamname']+ ' is currently playing: ' + api['currentgame']})`
+`$(eval const api = $(urlfetch json https://in-game.tech/steamid/<streamername>); if (api.error) {'Error';} else { api['steamname']+ ' is currently playing: ' + api['currentgame']})`
 
 
-`$(eval const api = $(urlfetch json https://steam-game-checker.herokuapp.com/steamid/<streamername>); if (api.error) {'Error';} else { api['steamname']+ ' is currently playing: ' + api['currentgame']+ ' get this game on '+api['gamestore']+ ' for '+api['price']+ ' EUR'})`
+`$(eval const api = $(urlfetch json https://in-game.tech/steamid/<streamername>); if (api.error) {'Error';} else { api['steamname']+ ' is currently playing: ' + api['currentgame']+ ' get this game on '+api['gamestore']+ ' for '+api['price']+ ' EUR'})`
  
  https://in-game.tech/
   
