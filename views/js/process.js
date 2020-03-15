@@ -1,0 +1,1 @@
+function submit(){if(""==document.getElementById("steamid").value)alert("You need to write something before you proceed!");else{var e=document.getElementById("steamid").value;console.log(e),window.location.href=`/steamid/${e}`}}function start(){document.getElementById("steamid").addEventListener("keydown",function(e){if(!e)e=window.event;13==e.keyCode&&submit()})}

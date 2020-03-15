@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="./css/main.css">
+
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://www.in-game.tech/" />
+        <meta name="theme-color" content="#2a2e3d" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta property="og:title" content="IN-GAME.tech | Look up what a user is playing right now!" />
+        <link rel="shortcut icon" href="./img/favicon.png" />
+        <meta property="og:description" content="With in-game API you can attach it to nightbot and it will tell your viewers what game you are playing on steam. Perfect for variety streamers!" />
+        <meta name="keywords" content="Steam game api, current game steam, steam user api, twitch, variety stream, nightbot, look up steam user">
+        <meta name="description" content="With in-game API you can attach it to nightbot and it will tell your viewers what game you are playing on steam. Perfect for variety streamers!" />
+    
+        <title>Search for steam users</title>
+      <script src="./js/process.js"></script>
+    </head>
+    <body onload="start()">
+        <main class="container">
+        <h1>Search for Steam users</h1> 
+        <p>You can search with steam64 or username</p>
+            <section class="my-4 form-inline">
+                    <input type="text" placeholder="IFreezeNO"  id="steamid" class="form-control col mr-2" required>
+                    <button id="submitbutton" class="btn btn-success" onclick="submit()">Search</button>
+            </section>
+            <section class="media">
+                <ul>
+                <li><a href="https://steamcommunity.com/id/IFreezeNO/" target="_blank"><i class="fa fa-steam"></i></a></li>
+                <li><a href="https://twitter.com/IFreezeNO" target="_blank"><i class="fa fa-twitter"></i></a></li>
+                <li><a href="https://twitch.tv/IFreezeNO" target="_blank"><i class="fa fa-twitch"></i></a></li>
+                <li><a href="https://github.com/IFreezeNO/" target="_blank"><i class="fa fa-github"></i></a></li>
+                <li><a href="https://steamcommunity.com/tradeoffer/new/?partner=242770205&token=2078YPrp" target="_blank"><i class="fa fa-gratipay"></i></a></li>
+                </ul>
+            </section>
+            <section>
+                <h2></h2>
+            </section>
+        </main>
+
+    </body>
+</html>
