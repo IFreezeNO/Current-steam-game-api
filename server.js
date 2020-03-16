@@ -11,6 +11,84 @@ const app = express();
 app.use(favicon(path.join(__dirname, 'views','img' ,'favicon.png')))
 
 
+app.get('/faceit/:faceitname', function(req, res) {
+    // Header
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    res.header('X-XSS-Protection' , 1 );
+
+var faceiturl = `https://api.faceit.com/core/v1/nicknames/${req.params.faceitname}`
+
+request({
+    url: faceiturl,
+    json: true
+}, function (error, response, body) {
+
+    if (!error && response.statusCode === 200 && body.payload.games.csgo.skill_level_label <= 10 && body.payload.games.csgo.skill_level_label >= 1) {
+        var faceitelo = body.payload.games.csgo.faceit_elo;
+        var rankup = 0;
+        var rankdown = 0;
+
+        //rankdown 
+        if(faceitelo < 801) {
+            rankdown = 1-faceitelo;  
+          }else if(faceitelo < 951) {
+              rankdown = 801-faceitelo;  
+          }else if(faceitelo < 1101) {
+              rankdown = 951-faceitelo;  
+          }else if(faceitelo < 1251) {
+              rankdown = 1101-faceitelo;
+          }else if(faceitelo < 1401) {
+              rankdown = faceitelo - 1251;  
+          }else if(faceitelo < 1551) {
+              rankdown = 1401-faceitelo;
+          }else if(faceitelo < 1701) {
+              rankdown = 1551-faceitelo;
+          }else if(faceitelo < 1851) {
+              rankdown = 1701-faceitelo;
+          }else if(faceitelo < 2001) {
+              rankdown = 1851-faceitelo;
+          }else if(faceitelo > 2001){
+            rankdown = 2001-faceitelo;
+          }
+
+        //rankup 
+        if(faceitelo < 801) {
+          rankup = 801 - faceitelo;  
+        }else if(faceitelo < 951) {
+            rankup = 951 - faceitelo;  
+        }else if(faceitelo < 1101) {
+            rankup = 1101 - faceitelo;  
+        }else if(faceitelo < 1251) {
+            rankup = 1251 - faceitelo;
+        }else if(faceitelo < 1401) {
+            rankup = 1401 - faceitelo;  
+        }else if(faceitelo < 1551) {
+            rankup = 1551 - faceitelo;
+        }else if(faceitelo < 1701) {
+            rankup = 1701 - faceitelo;
+        }else if(faceitelo < 1851) {
+            rankup = 1851 - faceitelo;
+        }else if(faceitelo < 2001) {
+            rankup = 2001 - faceitelo;
+        } 
+        var faceit = `{"level":${body.payload.games.csgo.skill_level_label}, "elo":${faceitelo}, "rankup": ${rankup}, "rankdown": ${rankdown}}`;
+
+        let faceitinfo = JSON.parse(faceit);
+        res.send(faceitinfo)
+    } else {
+        var error = '{"error": "Could not find the user, remember this is case sensitive"}';
+        let errormsg = JSON.parse(error);
+        res.send(errormsg)
+
+    }
+})
+});
+
+
+
+
+
 function lookupgame(gamename, steamname, response, $, req, res) {
     sgb.searchByName(gamename, (err, data) => {
 
@@ -72,7 +150,10 @@ app.get('/steamid/:SteamID', function(req, res) {
 
         //if no username found, show errormsg
         if(steamname == "") {
-            return res.send("The user could not be found, try again")
+            var error = '{"error": "Could not find the steam account"}';
+            let errormsg = JSON.parse(error);
+            res.send(errormsg)
+
         }
 
 
