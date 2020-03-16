@@ -1,7 +1,7 @@
 # Steam web api
 
 You can search up steam users by their steamid and see what games they currently play.
-
+You can lookup faceit users and see their elo with API
 
 Nightbot command for /steamid/: 
 
@@ -12,7 +12,7 @@ Nightbot command for /steamid/:
  
  Nightbot command for /faceit/: 
 
-`$(eval const api = $(urlfetch json https://in-game.tech/faceit/<faceitname>); if (api.error) {'Error';} else { 'Faceit level: '+api['level']+ ' Elo:' +api['elo']+ ' Elo needed for rankup/rankdown ' +api['rankup']+ '/' api['rankdown']})`
+`$(eval const api = $(urlfetch json https://in-game.tech/faceit/IFreeze23 ); if (api.error) {'Error';} else { 'Faceit level: '+api['level']+ ' ELO: ' +api['elo']+ '. ELO needed for rankup/rankdown ' +api['rankup']+'/'+api['rankdown']})`
 
 
 
