@@ -5,10 +5,10 @@ You can lookup faceit users and see their elo with API
 
 Nightbot command for  https://in-game.tech/steamid: 
 
-`$(eval const api = $(urlfetch json https://in-game.tech/steamid/<streamername>); if (api.error) {'Error';} else { api['steamname']+ ' is currently playing: ' + api['currentgame']})`
+`$(eval const api = $(urlfetch json https://in-game.tech/steamid/<streamers steam name>); if (api.error) {'Error';} else { api['steamname']+ ' is currently playing: ' + api['currentgame']})`
 
 
-`$(eval const api = $(urlfetch json https://in-game.tech/steamid/<streamername>); if (api.error) {'Error';} else { api['steamname']+ ' is currently playing: ' + api['currentgame']+ '. Get this game on steam: '+api['gamestore']+ ' for '+api['price']+ ' EUR'})`
+` $(eval const api = $(urlfetch json https://in-game.tech/steamid/<streamers stream name> ); if (api.error) {'Error';} else { api['steamname']+ ' is currently playing: ' + api['currentgame']+ ' | Steam : '+api['gamestore']+ ' for '+api['price']+ ' EUR'})`
  
  Nightbot command for  https://in-game.tech/faceit: 
 
