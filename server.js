@@ -31,12 +31,7 @@ request({
 
       let eseainfo = JSON.parse(faceit);
         res.send(eseainfo)
-    } else {
-        var error = '{"error": "Could not find the user, remember this is case sensitive"}';
-        let errormsg = JSON.parse(error);
-        res.send(errormsg)
-
-    }
+    } 
 })
 });
 
