@@ -29,7 +29,7 @@ request({
         console.log(body)
         var esea = `{"rank": "${body.rank.current}", Level: [{rank: "${body.level.current}", name: "${body.level.name}"}]}`;
 
-      let eseainfo = JSON.parse(faceit);
+      let eseainfo = JSON.parse(esea);
         res.send(eseainfo)
     } 
 })
