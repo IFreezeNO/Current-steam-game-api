@@ -30,7 +30,7 @@ request({
         var esea = `{"rank": "${body.rank.current}", Level: [{rank: "${body.level.current}", name: "${body.level.name}"}]}`;
 
       let eseainfo = JSON.parse(faceit);
-        res.send(faceitinfo)
+        res.send(eseainfo)
     } else {
         var error = '{"error": "Could not find the user, remember this is case sensitive"}';
         let errormsg = JSON.parse(error);
