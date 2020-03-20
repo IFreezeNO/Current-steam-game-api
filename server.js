@@ -18,7 +18,7 @@ app.get('/esea/:eseaid', function(req, res) {
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
     res.header('X-XSS-Protection' , 1 );
 
-var eseaurl = `https://play.esea.net/api/users/${req.params.eseaid}/profile/`
+var eseaurl = `https://play.esea.net/api/users/${req.params.eseaid}/profile`
 
 request({
     url: eseaurl,
