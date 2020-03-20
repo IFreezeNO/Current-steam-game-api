@@ -27,7 +27,7 @@ request({
 
     if (!error && response.statusCode === 200) {
         console.log(body)
-
+    res.send(body)
     } 
 })
 });
