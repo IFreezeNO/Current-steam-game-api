@@ -11,6 +11,37 @@ const app = express();
 app.use(favicon(path.join(__dirname, 'views','img' ,'favicon.png')))
 
 
+//esea get request
+app.get('/esea/:eseaid', function(req, res) {
+    // Header
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    res.header('X-XSS-Protection' , 1 );
+
+var eseaurl = `https://play.esea.net/api/users/${req.params.faceitname}/profile/`
+
+request({
+    url: eseaurl,
+    json: true
+}, function (error, response, body) {
+
+    if (!error && response.statusCode === 200) {
+        console.log(body)
+        var esea = `{"rank": "${body.rank.current}", Level: [{rank: "${body.level.current}", name: "${body.level.name}"}]}`;
+
+      let eseainfo = JSON.parse(faceit);
+        res.send(faceitinfo)
+    } else {
+        var error = '{"error": "Could not find the user, remember this is case sensitive"}';
+        let errormsg = JSON.parse(error);
+        res.send(errormsg)
+
+    }
+})
+});
+
+
+//faceit get request
 app.get('/faceit/:faceitname', function(req, res) {
     // Header
     res.header("Access-Control-Allow-Origin", "*");
