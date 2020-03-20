@@ -11,27 +11,6 @@ const app = express();
 app.use(favicon(path.join(__dirname, 'views','img' ,'favicon.png')))
 
 
-//esea get request
-app.get('/esea/:eseaid', function(req, res) {
-    // Header
-    res.header("Access-Control-Allow-Origin", "*");
-    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-    res.header('X-XSS-Protection' , 1 );
-
-var eseaurl = `https://play.esea.net/api/users/${req.params.eseaid}/profile`
-
-request({
-    url: eseaurl,
-    json: true
-}, function (error, response, body) {
-
-    if (!error && response.statusCode === 200) {
-        console.log(body)
-    res.send(body)
-    } 
-})
-});
-
 
 //faceit get request
 app.get('/faceit/:faceitname', function(req, res) {
