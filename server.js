@@ -27,10 +27,7 @@ request({
 
     if (!error && response.statusCode === 200) {
         console.log(body)
-        var esea = `{"rank": "${body.data.rank.current}", Level: [{rank: "${body.data.level.current}", name: "${body.data.level.name}"}]}`;
 
-      let eseainfo = JSON.parse(esea);
-        res.send(eseainfo)
     } 
 })
 });
