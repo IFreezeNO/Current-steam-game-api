@@ -22,11 +22,26 @@
     </head>
     <body onload="start()">
         <main class="container">
-        <h1>Search for Steam users</h1> 
-        <p>You can search with steam64 or username</p>
+            <h1>IN-GAME.TECH API</h1>
+            <p>Here you have all the in-game.tech APIs</p>
             <section class="my-4 form-inline">
-                    <input type="text" placeholder="Search for steam users..."  id="steamid" class="form-control col mr-2" required>
-                    <button id="submitbutton" class="btn btn-success" onclick="submit()">Search</button>
+                        <div style="background: white; padding: 1rem;">
+                            <p>Nightbot command for https://in-game.tech/<code>*steamid*</code></p>
+
+                            <code>$(eval const api = $(urlfetch json https://in-game.tech/steamid/<code>*steamid*</code> ); if (api.error) {'Error';} else { api['steamname']+ ' is currently playing: ' + api['currentgame']})</code>
+                                <br />
+                                <br />
+                            <code>$(eval const api = $(urlfetch json https://in-game.tech/steamid/<code>*steamid*</code> ); if (api.error) {'Error';} else { api['steamname']+ ' is currently playing: ' + api['currentgame']+ ' | Steam : '+api['gamestore']+ ' for '+api['price']+ ' EUR'})</code>
+                                <br />
+                                <br />
+                            <p>Nightbot command for https://in-game.tech/<code>*faceit*</code></p>
+
+                            <code>$(eval const api = $(urlfetch json https://in-game.tech/faceit/<code>*faceit*</code> ); if (api.error) {'Error';} else { 'Faceit level: '+api['level']+ ' ELO: ' +api['elo']+ '. ELO needed for rankup/rankdown ' +api['rankup']+'/'+api['rankdown']})</code>
+                                <br />
+                                <br />
+                            <p> You can read more about the api at the readme document at <a href="https://github.com/IFreezeNO/Current-steam-game-api/blob/master/README.md">github</a> or contact me on steam. </p>
+                        </div>
+                    </section>
             </section>
             <section class="media">
                 <ul>
