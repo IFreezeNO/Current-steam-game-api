@@ -35,23 +35,23 @@ request({
         if(faceitelo < 801) {
             rankdown = 1-faceitelo;  
           }else if(faceitelo < 951) {
-              rankdown = 801-faceitelo;  
+              rankdown = 800-faceitelo;  
           }else if(faceitelo < 1101) {
-              rankdown = 951-faceitelo;  
+              rankdown = 950-faceitelo;  
           }else if(faceitelo < 1251) {
-              rankdown = 1101-faceitelo;
+              rankdown = 1100-faceitelo;
           }else if(faceitelo < 1401) {
-              rankdown = faceitelo - 1251;  
+              rankdown = 1250 - faceitelo;  
           }else if(faceitelo < 1551) {
-              rankdown = 1401-faceitelo;
+              rankdown = 1400-faceitelo;
           }else if(faceitelo < 1701) {
-              rankdown = 1551-faceitelo;
+              rankdown = 1550-faceitelo;
           }else if(faceitelo < 1851) {
               rankdown = 1701-faceitelo;
           }else if(faceitelo < 2001) {
-              rankdown = 1851-faceitelo;
+              rankdown = 1850-faceitelo;
           }else if(faceitelo > 2001){
-            rankdown = 2001-faceitelo;
+            rankdown = 2000-faceitelo;
           }
 
         //rankup 
