@@ -28,7 +28,7 @@
                 <div style="background: white; padding: 1rem; width: 100%;">
                         <p class="accordion">Faceit API</p>
                             <div class="panel">
-                                <p>Nightbot command for https://in-game.tech/<code>*faceit*</code></p>
+                                <p>Nightbot command for https://in-game.tech/faceit/<code>*faceit*</code></p>
                                 <p>URL example: <a href="https://in-game.tech/faceit/IFreeze23">https://in-game.tech/faceit/<code>IFreeze23</code></a>
                                 <br /><hr />
                                 <p>!addcom *commandname* $(eval const api = $(urlfetch json https://in-game.tech/faceit/<code>*faceit*</code> ); if (api.error) {'Error';} else { 'Faceit level: '+api['level']+ ' ELO: ' +api['elo']+ '. ELO needed for rankup/rankdown ' +api['rankup']+'/'+api['rankdown']})</p>
@@ -38,7 +38,7 @@
 
                         <p class="accordion">Steam game API</p>
                             <div class="panel">
-                                <p>Nightbot command for https://in-game.tech/<code>*steamid*</code></p>
+                                <p>Nightbot command for https://in-game.tech/steamid/<code>*steamid*</code></p>
                                     <p>URL example: <a href="https://in-game.tech/steamid/ifreezeno">https://in-game.tech/steamid/<code>ifreezeno</code></a>
                                     <br /><hr />
                                     <p>!addcom *commandname* $(eval const api = $(urlfetch json https://in-game.tech/steamid/<code>*steamid*</code> ); if (api.error) {'Error';} else { api['steamname']+ ' is currently playing: ' + api['currentgame']})</p>
