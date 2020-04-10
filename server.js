@@ -79,10 +79,7 @@ request({
         let faceitinfo = JSON.parse(faceit);
         res.send(faceitinfo)
     } else {
-        var error = '{"error": "Could not find the user, remember this is case sensitive"}';
-        let errormsg = JSON.parse(error);
-        res.send(errormsg)
-
+        res.status(400).json({ error : 'Could not find the user, remember this is case sensitive'});
     }
 })
 });
@@ -152,10 +149,7 @@ app.get('/steamid/:SteamID', function(req, res) {
 
         //if no username found, show errormsg
         if(steamname == "") {
-            var error = '{"error": "Could not find the steam account"}';
-            let errormsg = JSON.parse(error);
-            res.send(errormsg)
-
+           res.status(400).json({ error : 'Could not find the steam account'});
         }
 
 
@@ -172,9 +166,9 @@ app.get('/steamid/:SteamID', function(req, res) {
 //index file
 app.use(express.static(path.join(__dirname, "views")));
 app.get('/', function(req, res) { 
-    res.header('X-XSS-Protection' , 1 );
      res
      .status(200)
+     .header('X-XSS-Protection' , 1 )
      .sendFile(path.join(__dirname, "views", "index.html"))   
 });
 
