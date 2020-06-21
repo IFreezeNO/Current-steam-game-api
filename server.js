@@ -18,7 +18,6 @@ app.get('/faceit/:faceitname', function(req, res) {
     res.header("Access-Control-Allow-Origin", "*");
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
     res.header('X-XSS-Protection' , 1 );
-var faceitelo = undefined;
 var faceiturl = `https://api.faceit.com/core/v1/nicknames/${req.params.faceitname}`
 
 request({
@@ -27,11 +26,11 @@ request({
 }, function (error, response, body) {
 
     if (!error && response.statusCode === 200) {
-       var faceitelo = body.payload.games.csgo.faceit_elo;
-       if(faceitelo === undefined) {
+
+       if(body.payload.games.csgo.faceit_elo === null) {
         return res.status(400).json({ error : 'Could not find the user'});
         }
-
+       var faceitelo = body.payload.games.csgo.faceit_elo;
         var rankup = 0;
         var rankdown = 0;
 
