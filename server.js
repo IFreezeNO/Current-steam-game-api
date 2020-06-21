@@ -23,10 +23,11 @@ request({
     url: faceiturl,
     json: true
 }, function (error, response, body) {
-
+var faceit = JSON.parse(body);
+    console.log(faceit);
     if (!error && response.statusCode === 200) {
        
-       if(!body.payload.games.csgo.faceit_elo) {
+       if(!faceit.payload.games.csgo.faceit_elo) {
         return res.status(400).json({ error : 'Could not find the user'});
         }else {
         var faceitelo = body.payload.games.csgo.faceit_elo;
