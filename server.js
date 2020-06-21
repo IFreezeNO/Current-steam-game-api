@@ -23,7 +23,7 @@ request({
     url: faceiturl,
     json: true
 }, function (error, response, body) {
-var faceit = JSON.parse(body);
+var faceit = JSON.parse(response);
     console.log(faceit);
     if (!error && response.statusCode === 200) {
        
