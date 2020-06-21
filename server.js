@@ -27,7 +27,7 @@ request({
         
        if(body.result == "error") {
         return res.status(400).json({ error : 'Could not find the user'});
-        } else if(games[0] === "csgo") {
+        } else if(body.payload.games[0] === "csgo") {
         var faceitelo = body.payload.games.csgo.faceit_elo;
         }else {
              res.status(400).json({ error : 'Could not find the user, remember this is case sensitive'});
