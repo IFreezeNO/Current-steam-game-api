@@ -26,7 +26,10 @@ request({
     json: true
 }, function (error, response, body) {
 
-    if (!error && response.statusCode === 200 && body.payload.games.csgo.skill_level_label <= 10 && body.payload.games.csgo.skill_level_label >= 1) {
+    if (!error && response.statusCode === 200) {
+       if(body.payload.games.csgo.faceit_elo === undefined) {
+        return res.status(400).json({ error : 'Could not find the user'});
+        }
         var faceitelo = body.payload.games.csgo.faceit_elo;
         var rankup = 0;
         var rankdown = 0;
