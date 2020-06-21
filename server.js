@@ -27,7 +27,7 @@ request({
 
     if (!error && response.statusCode === 200) {
 
-       if(body.payload.games.csgo.faceit_elo === null) {
+       if(body.payload.games.csgo === null) {
         return res.status(400).json({ error : 'Could not find the user'});
         }
        var faceitelo = body.payload.games.csgo.faceit_elo;
