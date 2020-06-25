@@ -30,7 +30,9 @@ request({
        if(body.result == "error") {
         return res.status(400).json({ error : 'Could not find the user'});
         } 
-
+        if(body.payload.games === !"csgo") {
+        return res.status(400).json({ error : 'Could not find the user'});
+        }
         var faceitelo = body.payload.games.csgo.faceit_elo;
         
 
