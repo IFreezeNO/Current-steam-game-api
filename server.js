@@ -24,14 +24,14 @@ request({
     json: true
 }, function (error, response, body) {
     if (!error && response.statusCode === 200) {
-        console.log("resp" +response)
-       var felo = JSON.parse(response);
-        console.log("FELO" +felo)
+
+    console.log(body);
+
        if(body.result == "error") {
         return res.status(400).json({ error : 'Could not find the user'});
         } 
 
-        var faceitelo = felo.payload.games.csgo.faceit_elo;
+        var faceitelo = body.payload.games.csgo.faceit_elo;
         
 
         var rankup = 0;
