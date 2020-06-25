@@ -24,7 +24,9 @@ request({
     json: true
 }, function (error, response, body) {
     if (!error && response.statusCode === 200) {
+        console.log("BODY" +body)
        var felo = JSON.parse(body);
+        console.log("FELO" +felo)
        if(body.result == "error") {
         return res.status(400).json({ error : 'Could not find the user'});
         } 
