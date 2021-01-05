@@ -18,7 +18,7 @@
   "author": "IFreeze",
   "license": "ISC",
   "dependencies": {
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "cheerio": "^1.0.0-rc.3",
     "ejs": "^3.0.1",
     "express": "^4.17.1",
